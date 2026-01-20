@@ -1,0 +1,149 @@
+
+.section {
+  padding: 80px 0;
+}
+
+.introBox {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 60px;
+}
+
+/* Resource Cards */
+.resourceGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-bottom: 80px;
+}
+
+.resourceCard {
+  background: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  border: 1px solid #eee;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s;
+}
+
+.resourceCard:hover {
+  border-color: var(--primary-red);
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.cardIcon {
+  width: 60px;
+  height: 60px;
+  background: var(--bg-offwhite);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-red);
+  margin-bottom: 25px;
+}
+
+.resourceCard h3 {
+  color: var(--primary-navi);
+  margin-bottom: 15px;
+  font-size: 1.25rem;
+}
+
+.resourceCard p {
+  color: var(--text-gray);
+  line-height: 1.6;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+
+/* Application Section */
+.programSection {
+  background: var(--primary-navi);
+  color: #fff;
+  padding: 100px 0;
+  border-radius: 20px;
+  margin-top: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.programGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.programContent h2 {
+  color: #fff;
+  font-size: 2.25rem;
+  margin-bottom: 24px;
+}
+
+.programContent p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  opacity: 0.9;
+  margin-bottom: 30px;
+}
+
+.statsRow {
+  display: flex;
+  gap: 40px;
+}
+
+.statItem h4 {
+  color: var(--primary-red);
+  font-size: 2.5rem;
+  margin-bottom: 5px;
+}
+
+.statItem p {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.appBox {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 40px;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.appBox h3 {
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.stepList {
+  list-style: none;
+  margin-bottom: 25px;
+}
+
+.stepList li {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+  align-items: center;
+}
+
+.stepNum {
+  width: 24px;
+  height: 24px;
+  background: var(--primary-red);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+
+@media (max-width: 992px) {
+  .resourceGrid { grid-template-columns: 1fr; }
+  .programGrid { grid-template-columns: 1fr; }
+}

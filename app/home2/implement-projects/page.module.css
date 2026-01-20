@@ -1,0 +1,234 @@
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 80px 20px;
+}
+
+.searchSection {
+  margin-bottom: 30px;
+  width: 100%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 15px 25px;
+  border: 2px solid #e5e7eb;
+  border-radius: 50px;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.searchInput:focus {
+  border-color: var(--primary-red);
+  box-shadow: 0 0 0 4px rgba(237, 28, 36, 0.1);
+}
+
+/* Filters */
+.filterSection {
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 20px;
+  background: var(--bg-offwhite);
+  padding: 30px;
+  border-radius: 12px;
+}
+
+.filterGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.filterLabel {
+  font-weight: 800;
+  color: var(--primary-navi);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  padding-left: 5px;
+}
+
+.selectWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.filterSelect {
+  width: 100%;
+  padding: 12px 20px;
+  border: 2px solid #e5e7eb;
+  background: #fff;
+  border-radius: 8px;
+  color: var(--text-dark);
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  appearance: none;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.filterSelect:focus {
+  border-color: var(--primary-red);
+  box-shadow: 0 0 0 4px rgba(237, 28, 36, 0.1);
+}
+
+.selectWrapper::after {
+  content: '▼';
+  font-size: 10px;
+  color: var(--primary-navi);
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+/* Grid */
+.projectsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.projectCard {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.projectCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.imageContainer {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+}
+
+.imageContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.projectCard:hover .imageContainer img {
+  transform: scale(1.05);
+}
+
+.statusTag {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(0, 35, 71, 0.9);
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.content {
+  padding: 25px;
+}
+
+.category {
+  color: var(--secondary-gold);
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--primary-navi);
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.summary {
+  font-size: 14px;
+  color: var(--text-gray);
+  line-height: 1.6;
+  margin-bottom: 15px;
+  display: -webkit-box;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--primary-navi);
+  font-weight: 600;
+  font-size: 14px;
+  transition: gap 0.3s ease;
+}
+
+.link:hover {
+  gap: 12px;
+  color: var(--secondary-gold);
+}
+
+.noResults {
+  text-align: center;
+  padding: 100px 20px;
+  background: var(--bg-offwhite);
+  border-radius: 12px;
+}
+
+.noResults h3 {
+  font-size: 24px;
+  color: var(--primary-navi);
+  margin-bottom: 15px;
+}
+
+.noResults p {
+  color: var(--text-gray);
+  font-size: 16px;
+}
+
+@media (max-width: 1024px) {
+  .filterSection { flex-wrap: wrap; }
+  .filterGroup { flex: 1 1 calc(50% - 20px); }
+  .projectsGrid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .filterSection { padding: 20px; flex-direction: column; }
+  .filterGroup { width: 100%; flex: none; }
+}
+
+@media (max-width: 600px) {
+  .projectsGrid { grid-template-columns: 1fr; }
+}

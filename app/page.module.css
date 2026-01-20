@@ -1,0 +1,321 @@
+
+.section {
+  padding: 100px 0;
+}
+
+.statsSection {
+  background-color: var(--primary-navi);
+  color: #fff;
+  padding: 60px 0;
+  margin-top: -30px;
+  position: relative;
+  z-index: 10;
+  box-shadow: var(--shadow-lg);
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  text-align: center;
+}
+
+.statItem h3 {
+  font-size: 3rem;
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.statItem p {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.8;
+}
+
+/* About Preview */
+.aboutPreview {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 80px;
+}
+
+.aboutText {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: var(--text-gray);
+  margin-bottom: 30px;
+}
+
+/* Why Choose Kimmex Features */
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.featureCard {
+  display: flex;
+  gap: 20px;
+  padding: 30px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s;
+}
+
+.featureCard:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.featureIcon {
+  color: var(--primary-red);
+  flex-shrink: 0;
+}
+
+/* Process Section */
+.processSection {
+  background: var(--bg-offwhite);
+  padding: 100px 0;
+}
+
+.processGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  margin-top: 60px;
+  position: relative;
+}
+
+/* Connector line */
+.processGrid::before {
+  content: '';
+  position: absolute;
+  top: 40px;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  background: #ddd;
+  z-index: 1;
+}
+
+.stepCard {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.stepNumber {
+  width: 80px;
+  height: 80px;
+  background: var(--primary-navi);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 30px;
+  font-size: 1.75rem;
+  font-weight: 800;
+  border: 8px solid var(--bg-offwhite);
+  transition: all 0.3s;
+}
+
+.stepCard:hover .stepNumber {
+  background: var(--primary-red);
+  transform: scale(1.1);
+}
+
+/* Services Grid */
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.serviceCard {
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: var(--shadow-sm);
+  border-bottom: 4px solid var(--primary-navi);
+  transition: all 0.3s;
+}
+
+.serviceCard:hover {
+  transform: translateY(-10px);
+  border-bottom-color: var(--primary-red);
+  box-shadow: var(--shadow-lg);
+}
+
+.serviceIcon {
+  color: var(--primary-red);
+  margin-bottom: 25px;
+}
+
+.serviceCard h3 {
+  font-size: 1.25rem;
+  margin-bottom: 15px;
+}
+
+.serviceCard p {
+  font-size: 0.9rem;
+  color: var(--text-gray);
+  line-height: 1.6;
+}
+
+/* Projects Grid */
+.projectsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.projectCard {
+  position: relative;
+  height: 450px;
+  border-radius: 12px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+}
+
+.projectOverlay {
+  position: absolute;
+  bottom: -100px;
+  left: 0;
+  width: 100%;
+  padding: 40px 30px;
+  background: linear-gradient(transparent, rgba(0, 35, 71, 0.95) 40%);
+  color: #fff;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.projectOverlay h3 {
+  color: #fff;
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+.projectCard:hover .projectOverlay {
+  bottom: 0;
+}
+
+.projectDesc {
+  font-size: 0.9rem;
+  opacity: 0;
+  margin-bottom: 20px;
+  transition: opacity 0.3s;
+  transition-delay: 0.2s;
+}
+
+.projectCard:hover .projectDesc {
+  opacity: 1;
+}
+
+.viewProjectBtn {
+  display: inline-block;
+  color: #fff;
+  font-weight: 700;
+  border-bottom: 2px solid var(--primary-red);
+  padding-bottom: 4px;
+}
+
+/* News Section */
+.newsSection {
+  background: var(--bg-offwhite);
+}
+
+.newsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.newsCard {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.newsDate {
+  padding: 15px 25px 0;
+  font-size: 0.75rem;
+  color: var(--primary-red);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.newsContent {
+  padding: 20px 25px 30px;
+}
+
+.newsTitle {
+  font-size: 1.125rem;
+  margin-bottom: 20px;
+  height: 2.8em;
+  overflow: hidden;
+}
+
+/* Clients Grid */
+.clientsSection {
+  padding: 60px 0;
+  border-top: 1px solid #eee;
+}
+
+.clientsGrid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  opacity: 0.6;
+}
+
+.clientLogo {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-gray);
+  letter-spacing: 1px;
+}
+
+/* CTA Section */
+.ctaSection {
+  background: var(--primary-navi);
+  color: #fff;
+  padding: 100px 0;
+  text-align: center;
+}
+
+.ctaTitle {
+  font-size: 2.5rem;
+  color: #fff;
+  margin-bottom: 24px;
+}
+
+.ctaText {
+  font-size: 1.25rem;
+  opacity: 0.8;
+  margin-bottom: 40px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 1024px) {
+  .statsGrid { grid-template-columns: repeat(2, 1fr); }
+  .servicesGrid { grid-template-columns: repeat(2, 1fr); }
+  .processGrid { grid-template-columns: repeat(2, 1fr); gap: 60px; }
+  .processGrid::before { display: none; }
+}
+
+@media (max-width: 768px) {
+  .projectsGrid { grid-template-columns: 1fr; }
+  .newsGrid { grid-template-columns: 1fr; }
+  .featuresGrid { grid-template-columns: 1fr; }
+  .ctaTitle { font-size: 2rem; }
+}

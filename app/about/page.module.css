@@ -1,0 +1,463 @@
+
+/* ... Existing Styles ... */
+
+.section {
+  padding: 100px 0;
+}
+
+.introGrid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.introTitle {
+  font-size: 2.5rem;
+  color: var(--primary-navi);
+  margin-bottom: 24px;
+}
+
+.introText {
+  color: var(--text-gray);
+  line-height: 1.8;
+  font-size: 1.05rem;
+  margin-bottom: 20px;
+}
+
+/* Vision Mission Grid */
+.visionSection {
+  background-color: var(--bg-offwhite);
+  padding: 80px 0;
+}
+
+.visionGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.visionCard {
+  background: #fff;
+  padding: 40px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.visionCard:hover {
+  transform: translateY(-10px);
+}
+
+.visionIcon {
+  width: 70px;
+  height: 70px;
+  background: rgba(46, 49, 146, 0.1); 
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+  color: var(--primary-red);
+}
+
+.visionCard h3 {
+  margin-bottom: 16px;
+  color: var(--primary-navi);
+}
+
+/* CEO Message */
+.ceoSection {
+  padding: 100px 0;
+  background-color: #fff;
+}
+
+.ceoGrid {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.ceoImageWrapper {
+  position: relative;
+}
+
+.ceoImageWrapper img {
+  border-radius: 8px;
+  width: 100%;
+  box-shadow: 20px 20px 0 var(--primary-navi);
+}
+
+.ceoContent {
+  padding: 40px;
+  background: var(--bg-offwhite);
+  border-radius: 8px;
+  position: relative;
+}
+
+.ceoQuote {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  font-style: italic;
+  line-height: 1.8;
+  color: var(--primary-navi);
+  margin-bottom: 30px;
+}
+
+/* Milestones - Fixed Absolute Layout */
+.milestonesSection {
+  padding: 100px 0;
+  background: #fff;
+  overflow: hidden;
+}
+
+.timelineContainer {
+  position: relative;
+  height: 500px; /* Fixed height for infographic layout */
+  margin-top: 40px;
+}
+
+/* Central Horizontal Line */
+.timelineLine {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  right: 20px;
+  height: 4px;
+  background: #e5e7eb;
+  transform: translateY(-50%);
+  z-index: 0;
+  border-radius: 4px;
+}
+
+.timelineGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  height: 100%;
+  position: absolute;
+  top: 0; 
+  left: 0; 
+  width: 100%;
+  z-index: 1;
+}
+
+.timelineItem {
+  position: relative;
+  height: 100%;
+}
+
+.timelineDot {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #fff;
+  border: 5px solid;
+  z-index: 10;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 0 4px #fff; 
+}
+
+/* Milestone Card General */
+.milestoneCard {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  width: 90%;
+  max-width: 280px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  border: 1px solid #f0f0f0;
+  z-index: 5;
+}
+
+.yearText {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.milestoneTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+
+.milestoneDesc {
+  font-size: 0.85rem;
+  color: var(--text-gray);
+  line-height: 1.5;
+}
+
+/* TOP ITEM Specifics */
+.timelineItemTop .milestoneCard {
+  bottom: 50%; 
+  margin-bottom: 50px; /* Push up away from center line */
+  border-top: 5px solid var(--primary-navi);
+}
+
+.timelineItemTop .yearText {
+  color: var(--primary-navi);
+}
+
+.timelineItemTop .timelineDot {
+  border-color: var(--primary-navi);
+}
+
+/* Connector Line Top */
+.timelineItemTop::before {
+  content: '';
+  position: absolute;
+  bottom: 50%; 
+  left: 50%;
+  width: 2px;
+  height: 50px; /* Connects dot to card */
+  background: var(--primary-navi);
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+/* BOTTOM ITEM Specifics */
+.timelineItemBottom .milestoneCard {
+  top: 50%;
+  margin-top: 50px; /* Push down away from center line */
+  border-top: 5px solid var(--primary-red);
+}
+
+.timelineItemBottom .yearText {
+  color: var(--primary-red);
+}
+
+.timelineItemBottom .timelineDot {
+  border-color: var(--primary-red);
+}
+
+/* Connector Line Bottom */
+.timelineItemBottom::before {
+  content: '';
+  position: absolute;
+  top: 50%; 
+  left: 50%;
+  width: 2px;
+  height: 50px; /* Connects dot to card */
+  background: var(--primary-red);
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+/* Org Chart - Hierarchical Tree Structure */
+.orgSection {
+  background: var(--bg-offwhite);
+  padding: 100px 0;
+  text-align: center;
+}
+
+.orgChartWrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.orgLevel {
+  position: relative;
+  margin-bottom: 60px;
+}
+
+.orgRow {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  position: relative;
+}
+
+.orgNode {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  border: 2px solid #eee;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 600;
+  color: var(--primary-navi);
+  width: 200px;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.orgNode:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  border-color: var(--primary-red);
+}
+
+.orgNodeTitle {
+  font-size: 14px;
+  text-align: center;
+  line-height: 1.3;
+}
+
+.orgImageWrapper {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 15px;
+  border: 3px solid var(--primary-red);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.orgImageWrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.orgTopNode {
+  background: var(--primary-navi);
+  color: #fff;
+  font-size: 1.1rem;
+  padding: 25px 30px;
+  width: 280px;
+  margin: 0 auto;
+}
+
+.orgTopNode .orgNodeTitle {
+  color: #fff;
+  font-size: 16px;
+}
+
+.orgTopNode .orgImageWrapper {
+  width: 100px;
+  height: 100px;
+  border-color: #fff;
+}
+
+/* Connecting Lines */
+.verticalLine {
+  width: 2px;
+  height: 40px;
+  background: #cbd5e0;
+  margin: 0 auto;
+}
+
+.verticalConnector {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 40px;
+  background: #cbd5e0;
+}
+
+.horizontalLineContainer {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  display: flex;
+  justify-content: center;
+}
+
+.horizontalLine {
+  height: 2px;
+  background: #cbd5e0;
+  width: 70%;
+}
+
+/* Quality & Safety */
+.qualitySection {
+  padding: 100px 0;
+  background-color: #fff;
+}
+
+.qualityGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.qualityList li {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  align-items: flex-start;
+}
+
+.checkIcon {
+  color: var(--primary-red);
+  margin-top: 3px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .introGrid { grid-template-columns: 1fr; }
+  .visionGrid { grid-template-columns: 1fr; }
+  .ceoGrid { grid-template-columns: 1fr; }
+  
+  /* Reset timeline to vertical layout */
+  .timelineContainer { 
+    height: auto;
+    margin-top: 0;
+  }
+  
+  .timelineLine {
+    left: 28px;
+    right: auto;
+    width: 4px;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    transform: none;
+  }
+  
+  .timelineGrid {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    gap: 40px;
+  }
+  
+  .timelineItem {
+    height: auto;
+    padding-left: 80px; /* Space for line */
+    text-align: left;
+  }
+  
+  .timelineDot {
+    left: 30px;
+    top: 0;
+    transform: none;
+  }
+  
+  .milestoneCard {
+    position: static;
+    transform: none;
+    width: 100%;
+    max-width: none;
+    text-align: left;
+    margin: 0 !important; /* Reset pushes */
+  }
+  
+  /* Hide connectors on mobile */
+  .timelineItemTop::before, .timelineItemBottom::before {
+    display: none;
+  }
+  
+  .qualityGrid { grid-template-columns: 1fr; }
+}

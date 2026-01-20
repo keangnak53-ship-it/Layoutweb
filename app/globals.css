@@ -1,0 +1,302 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700&display=swap');
+
+:root {
+  /* Brand Colors - Exact Match to Uploaded Image (Midnight Navy) */
+  --primary-blue: #001A33; /* The very deep midnight navy from user image */
+  --primary-red: #ED1C24;  
+  
+  /* UI Accents */
+  --primary-navi: #001A33; /* Updated to match new brand navy */
+  --secondary-red: #C4161C;
+  
+  /* Hover States */
+  --blue-hover: #00264d;
+  --red-hover: #af1419;
+  
+  /* Neutral Colors */
+  --text-dark: #1A1A1A;
+  --text-light: #F8F9FA;
+  --text-gray: #555555;
+  --bg-light: #FFFFFF;
+  --bg-offwhite: #F4F6F8;
+  --bg-dark: #0A0F1C;
+  
+  /* UI Elements */
+  --border-color: rgba(0, 0, 0, 0.08);
+  --glass-bg: rgba(255, 255, 255, 0.9);
+  --glass-border: rgba(255, 255, 255, 0.6);
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.02);
+  --shadow-md: 0 8px 16px rgba(46, 49, 146, 0.05);
+  --shadow-lg: 0 20px 40px rgba(46, 49, 146, 0.08);
+  
+  /* Dimensions */
+  --container-width: 1280px;
+  --header-height: 90px;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: 'Inter', 'Khmer OS System', sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Language Specific Fonts */
+.khmer-font, 
+.khmer-font *,
+.khmer-font h1, .khmer-font h2, .khmer-font h3, .khmer-font h4, .khmer-font h5, .khmer-font h6,
+.khmer-font button, .khmer-font input, .khmer-font select, .khmer-font textarea, .khmer-font a {
+  font-family: 'Khmer OS System', 'Inter', sans-serif !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', 'Khmer OS System', sans-serif;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--primary-blue);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+/* Utilities */
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 28px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 15px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Primary Button is now RED */
+.btn-primary {
+  background-color: var(--primary-red);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: var(--red-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(237, 28, 36, 0.4);
+}
+
+/* Navy Button */
+.btn-navy {
+  background-color: var(--primary-blue);
+  color: #fff;
+}
+
+.btn-navy:hover {
+  background-color: var(--blue-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(46, 49, 146, 0.3);
+}
+
+/* Outline Button */
+.btn-outline {
+  background-color: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+.btn-outline:hover {
+  background-color: #fff;
+  color: var(--primary-blue);
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary-blue);
+  position: relative;
+  display: inline-block;
+}
+
+.section-subtitle {
+  color: var(--primary-red);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+/* Glassmorphism */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease forwards;
+}
+
+/* Common Utility Classes for Layout and Spacing */
+.flex { display: flex; }
+.flex-column { display: flex; flex-direction: column; }
+.justify-center { justify-content: center; }
+.items-center { align-items: center; }
+.gap-2 { gap: 8px; }
+.gap-4 { gap: 16px; }
+.gap-10 { gap: 40px; }
+
+.text-sm { font-size: 0.875rem; }
+.text-lg { font-size: 1.125rem; }
+.text-xl { font-size: 1.25rem; }
+.text-white { color: #ffffff; }
+.text-gray-500 { color: #6b7280; }
+
+.font-bold { font-weight: 700; }
+.font-semibold { font-weight: 600; }
+
+.mb-2 { margin-bottom: 8px; }
+.mb-3 { margin-bottom: 12px; }
+.mt-2 { margin-top: 8px; }
+.block { display: block; }
+.w-full { width: 100%; }
+.h-48 { height: 12rem; }
+.object-cover { object-fit: cover; }
+
+/* --- Home2 Corner Shape Style --- */
+.home2-style, 
+.home2-style *, 
+.home2-style *::before, 
+.home2-style *::after {
+  border-radius: 0 !important;
+}
+
+.home2-style .btn,
+.home2-style .serviceCard,
+.home2-style .projectCard,
+.home2-style .newsCard,
+.home2-style .infoCard,
+.home2-style .subjectCard,
+.home2-style .input,
+.home2-style .select,
+.home2-style img {
+  border-radius: 0 !important;
+  clip-path: polygon(
+    0 0, 
+    100% 0, 
+    100% 100%, 
+    15px 100%, 
+    0 calc(100% - 15px)
+  ); /* Architectural cut for 'corner shape' feel */
+  transition: all 0.3s ease;
+}
+
+.home2-style .btn:hover,
+.home2-style .serviceCard:hover {
+  clip-path: polygon(
+    15px 0, 
+    100% 0, 
+    100% calc(100% - 15px), 
+    calc(100% - 15px) 100%, 
+    0 100%, 
+    0 15px
+  ); /* Dynamic corner change on hover */
+}
+
+/* --- Home2 Specific Animations --- */
+@keyframes cornerSlideIn {
+  from { 
+    opacity: 0; 
+    transform: translateX(-30px) skewX(-5deg); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateX(0) skewX(0); 
+  }
+}
+
+@keyframes architecturalGlow {
+  0% { box-shadow: 0 0 0 rgba(237, 28, 36, 0); }
+  50% { box-shadow: 0 0 20px rgba(237, 28, 36, 0.2); }
+  100% { box-shadow: 0 0 0 rgba(237, 28, 36, 0); }
+}
+
+.home2-style section {
+  animation: cornerSlideIn 1s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+.home2-style .btn-primary {
+  animation: architecturalGlow 3s infinite ease-in-out;
+}
+
+.home2-style .section-title {
+  position: relative;
+  overflow: hidden;
+}
+
+.home2-style .section-title::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(237, 28, 36, 0.1), transparent);
+  transition: 0.5s;
+}
+
+.home2-style .section-title:hover::before {
+  left: 100%;
+}
+
+/* Staggered entrance for cards */
+.home2-style .serviceCard, 
+.home2-style .projectCard, 
+.home2-style .newsCard {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Architectural Grid for Home2 */
+.home2-style main {
+  background-image: 
+    linear-gradient(rgba(46, 49, 146, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(46, 49, 146, 0.02) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.home2-style .section-title {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-left: 8px solid var(--primary-red);
+  padding-left: 20px;
+}

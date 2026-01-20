@@ -1,0 +1,143 @@
+
+.section {
+  padding: 80px 0;
+}
+
+.introBox {
+  margin-bottom: 60px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 60px;
+}
+
+/* Announcements List */
+.announcementsSection h3 {
+  font-size: 1.75rem;
+  color: var(--primary-navi);
+  margin-bottom: 30px;
+  border-bottom: 2px solid var(--primary-red);
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+.announcementList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.announcementCard {
+  background: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  border: 1px solid #eee;
+  display: flex;
+  gap: 20px;
+  transition: all 0.3s;
+}
+
+.announcementCard:hover {
+  border-color: var(--primary-red);
+  box-shadow: var(--shadow-md);
+}
+
+.dateBox {
+  background: var(--bg-offwhite);
+  padding: 15px;
+  border-radius: 4px;
+  text-align: center;
+  min-width: 80px;
+  height: fit-content;
+}
+
+.day {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--primary-navi);
+}
+
+.month {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--primary-red);
+}
+
+.announcementContent h4 {
+  color: var(--primary-navi);
+  margin-bottom: 10px;
+}
+
+.announcementContent p {
+  font-size: 0.95rem;
+  color: var(--text-gray);
+  line-height: 1.6;
+}
+
+/* Document Library */
+.sidebarTitle {
+  font-size: 1.5rem;
+  color: var(--primary-navi);
+  margin-bottom: 30px;
+}
+
+.docCategory {
+  margin-bottom: 40px;
+}
+
+.catHeader {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-gray);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.docList {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.docItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.docItem:hover {
+  background: var(--bg-offwhite);
+  transform: translateX(5px);
+}
+
+.docInfo h5 {
+  font-size: 0.95rem;
+  color: var(--text-dark);
+}
+
+.docInfo span {
+  font-size: 0.75rem;
+  color: #999;
+}
+
+.downloadIcon {
+  color: var(--primary-red);
+  cursor: pointer;
+}
+
+@media (max-width: 992px) {
+  .grid { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,266 @@
+
+.detailPage {
+  background: #fff;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 80px 20px;
+}
+
+.mainLayout {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr;
+  gap: 60px;
+}
+
+/* Meta Data */
+.articleMeta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 25px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid #eee;
+}
+
+.metaLeft {
+  display: flex;
+  gap: 25px;
+}
+
+.metaItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-gray);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.metaItem svg {
+  color: var(--primary-red);
+}
+
+.metaRight {
+  display: flex;
+  gap: 15px;
+}
+
+.iconBtn {
+  background: #f4f6f8;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-navi);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.iconBtn:hover {
+  background: var(--primary-red);
+  color: #fff;
+}
+
+/* Article Body */
+.articleBody {
+  margin-bottom: 60px;
+}
+
+.articleBody p {
+  font-size: 1.15rem;
+  line-height: 1.9;
+  color: #333;
+  margin-bottom: 25px;
+}
+
+.articleBody h4 {
+  font-size: 1.5rem;
+  color: var(--primary-navi);
+  margin: 40px 0 20px;
+}
+
+/* Media/Documents */
+.sectionTitle {
+  font-size: 1.75rem;
+  color: var(--primary-navi);
+  margin-bottom: 30px;
+}
+
+.mediaGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 60px;
+}
+
+.mediaItem {
+  height: 300px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.mediaItem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Navigation */
+.navigation {
+  padding-top: 40px;
+  border-top: 1px solid #eee;
+}
+
+.backLink {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--primary-navi);
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: gap 0.3s;
+}
+
+.backLink:hover {
+  gap: 18px;
+  color: var(--primary-red);
+}
+
+/* Sidebar */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.sidebarWidget {
+  background: var(--bg-offwhite);
+  padding: 30px;
+  border-radius: 12px;
+}
+
+.widgetTitle {
+  font-size: 1.25rem;
+  color: var(--primary-navi);
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.widgetTitle::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: var(--primary-red);
+}
+
+.shareButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.shareBtn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--primary-navi);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.shareBtn:hover {
+  border-color: var(--primary-red);
+  color: var(--primary-red);
+}
+
+.relatedList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.relatedCard {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.relatedCard img {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.relatedInfo h5 {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 5px;
+  color: var(--primary-navi);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.relatedInfo span {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.ctaWidget {
+  background: var(--primary-navi);
+  padding: 40px;
+  border-radius: 12px;
+  color: #fff;
+}
+
+.ctaWidget h4 {
+  color: #fff;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.ctaWidget p {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+.ctaInput {
+  width: 100%;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .mainLayout { grid-template-columns: 1fr; }
+  .sidebar { gap: 30px; }
+}
+
+@media (max-width: 768px) {
+  .metaLeft { flex-direction: column; gap: 10px; }
+  .mediaGrid { grid-template-columns: 1fr; }
+}

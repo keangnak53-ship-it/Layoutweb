@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700&display=swap');
+
+:root {
+  /* Brand Colors - Updated based on KM Logo */
+  --primary-blue: #2E3192; /* Deep Blue from KM Logo text */
+  --primary-red: #ED1C24;  /* Bright Red from KM Logo background */
+  
+  /* Mapped to previous variable names for compatibility, or updated */
+  --primary-navi: var(--primary-blue); 
+  --secondary-gold: var(--primary-red); /* Replacing Gold with Red as accent */
+  
+  /* Neutral Colors */
+  --text-dark: #1A1A1A;
+  --text-light: #F8F9FA;
+  --text-gray: #555555;
+  --bg-light: #FFFFFF;
+  --bg-offwhite: #F4F6F8;
+  --bg-dark: #0A0F1C;
+  
+  /* UI Elements */
+  --border-color: #E5E7EB;
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --glass-border: rgba(255, 255, 255, 0.5);
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  
+  /* Dimensions */
+  --container-width: 1280px;
+  --header-height: 90px;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--primary-blue);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+/* Utilities */
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 28px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 15px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Primary Button is now Red */
+.btn-primary {
+  background-color: var(--primary-red);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #c4000b;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(237, 28, 36, 0.4);
+}
+
+/* Outline Button */
+.btn-outline {
+  background-color: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+.btn-outline:hover {
+  background-color: #fff;
+  color: var(--primary-blue);
+}
+
+/* Navy Button */
+.btn-navy {
+  background-color: var(--primary-blue);
+  color: #fff;
+}
+
+.btn-navy:hover {
+  background-color: #1a1c6b;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(46, 49, 146, 0.3);
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary-blue);
+  position: relative;
+  display: inline-block;
+}
+
+.section-subtitle {
+  color: var(--primary-red);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+/* Glassmorphism */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease forwards;
+}
