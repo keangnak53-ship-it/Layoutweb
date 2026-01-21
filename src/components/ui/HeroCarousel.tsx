@@ -20,7 +20,7 @@ export interface Slide {
 const defaultSlides: Slide[] = [
   {
     id: 1,
-    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+    image: '/images/Thumbnail-1.jpg',
     title: 'Design & Build',
     subtitle: 'For Cambodia',
     desc: 'We build the future with precision, quality, and integrity. From government infrastructures to premium private developments.',
@@ -31,7 +31,7 @@ const defaultSlides: Slide[] = [
   },
   {
     id: 2,
-    image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+    image: '/images/Thumbnail-5.jpg',
     title: 'Sustainable',
     subtitle: 'Infrastructure',
     desc: 'Engineering solutions that stand the test of time. We are committed to building safe and sustainable communities.',
@@ -42,7 +42,7 @@ const defaultSlides: Slide[] = [
   },
   {
     id: 3,
-    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+    image: '/images/Thumbnail-8.jpg',
     title: 'Premium',
     subtitle: 'Developments',
     desc: 'Transforming landscapes with modern architectural designs and world-class construction standards.',

@@ -162,7 +162,7 @@ export default function Home2() {
           </div>
           
           <div className={styles.projectsGrid}>
-             <div className={styles.projectCard} style={{backgroundImage: "url('https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80')"}}>
+             <div className={styles.projectCard} style={{backgroundImage: "url('/images/Thumbnail-1.jpg')"}}>
                 <div className={styles.projectOverlay}>
                    <h3>Ministry Office Complex</h3>
                    <div className="mb-2 text-[#ED1C24] font-semibold text-sm">Phnom Penh • Government</div>
@@ -172,7 +172,7 @@ export default function Home2() {
                    <Link href="/done-projects" className={styles.viewProjectBtn}>View Project</Link>
                 </div>
              </div>
-             <div className={styles.projectCard} style={{backgroundImage: "url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80')"}}>
+             <div className={styles.projectCard} style={{backgroundImage: "url('/images/Thumbnail-5.jpg')"}}>
                 <div className={styles.projectOverlay}>
                    <h3>BVM Water Treatment</h3>
                    <div className="mb-2 text-[#ED1C24] font-semibold text-sm">Siem Reap • Infrastructure</div>
@@ -182,7 +182,7 @@ export default function Home2() {
                    <Link href="/done-projects" className={styles.viewProjectBtn}>View Project</Link>
                 </div>
              </div>
-             <div className={styles.projectCard} style={{backgroundImage: "url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80')"}}>
+             <div className={styles.projectCard} style={{backgroundImage: "url('/images/Thumbnail-3.jpg')"}}>
                 <div className={styles.projectOverlay}>
                    <h3>Private Villa Estate</h3>
                    <div className="mb-2 text-[#ED1C24] font-semibold text-sm">Kandal • Residential</div>
@@ -191,6 +191,42 @@ export default function Home2() {
                    </p>
                    <Link href="/done-projects" className={styles.viewProjectBtn}>View Project</Link>
                 </div>
+             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className={`${styles.section} ${styles.newsSection}`}>
+        <div className="container">
+          <div className="text-center">
+             <span className="section-subtitle">Updates</span>
+             <h2 className="section-title">Latest News</h2>
+          </div>
+
+          <div className={styles.newsGrid}>
+             <div className={styles.newsCard}>
+               <img src="/images/Thumbnail-4.jpg" alt="News" className="w-full h-48 object-cover" />
+               <div className={styles.newsDate}>Oct 15, 2025</div>
+               <div className={styles.newsContent}>
+                 <h3 className={styles.newsTitle}>Kim Mex Wins Best Commercial Project Award</h3>
+                 <Link href="/news" className="text-sm font-semibold hover:text-[#ED1C24] transition">Read More &rarr;</Link>
+               </div>
+             </div>
+             <div className={styles.newsCard}>
+               <img src="/images/Thumbnail-2.jpg" alt="News" className="w-full h-48 object-cover" />
+               <div className={styles.newsDate}>Sep 02, 2025</div>
+               <div className={styles.newsContent}>
+                 <h3 className={styles.newsTitle}>Groundbreaking Ceremony for New Water Plant</h3>
+                 <Link href="/news" className="text-sm font-semibold hover:text-[#ED1C24] transition">Read More &rarr;</Link>
+               </div>
+             </div>
+             <div className={styles.newsCard}>
+               <img src="/images/Thumbnail-7.jpg" alt="News" className="w-full h-48 object-cover" />
+               <div className={styles.newsDate}>Aug 10, 2025</div>
+               <div className={styles.newsContent}>
+                 <h3 className={styles.newsTitle}>Safety Milestone: 1 Million Man-Hours</h3>
+                 <Link href="/news" className="text-sm font-semibold hover:text-[#ED1C24] transition">Read More &rarr;</Link>
+               </div>
              </div>
           </div>
         </div>

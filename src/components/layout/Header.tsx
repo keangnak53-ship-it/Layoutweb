@@ -227,19 +227,7 @@ const Header = () => {
              <Search size={20} />
           </button>
 
-          <img 
-            src="images/flat.gif" 
-            alt="Flag" 
-            className={styles.flagIcon}
-            style={{
-              width: '24px',
-              height: '24px',
-              cursor: 'pointer',
-              transition: 'transform 0.3s'
-            }}
-            onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.1)'}
-            onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
-          />
+
 
           <button 
             className={styles.mobileMenuBtn}
