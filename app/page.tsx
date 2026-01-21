@@ -182,7 +182,7 @@ export default function Home() {
                   <Link href="/done-projects" className={styles.viewProjectBtn}>View Project</Link>
                 </div>
              </div>
-             <div className={styles.projectCard} style={{backgroundImage: "url('https://images.unsplash.com/photo-1590674899505-1c5c41951f89?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80')"}}>
+             <div className={styles.projectCard} style={{backgroundImage: "url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80')"}}>
                 <div className={styles.projectOverlay}>
                   <h3>Private Villa Estate</h3>
                   <div className="mb-2 text-[#ED1C24] font-semibold text-sm">Kandal • Residential</div>
