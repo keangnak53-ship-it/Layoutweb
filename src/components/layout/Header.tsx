@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, Search, ChevronDown, Languages, X } from 'lucide-react';
+import { Menu, Search, ChevronDown, ChevronRight, Languages, X } from 'lucide-react';
 import { useRouter, usePathname } from 'next/navigation';
 import Logo from '@/components/ui/Logo';
 import styles from './Header.module.css';
@@ -11,7 +11,13 @@ import { useLanguage } from '@/context/LanguageContext';
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+  
+  // Mobile dropdown states
+  const [mobileProjectsOpen, setMobileProjectsOpen] = useState(false);
+  const [mobileHomeOpen, setMobileHomeOpen] = useState(false);
+
   const { language, setLanguage, t } = useLanguage();
   const router = useRouter();
   const pathname = usePathname();
@@ -39,11 +45,30 @@ const Header = () => {
 
   useEffect(() => {
     const handleEsc = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setSearchOpen(false);
+      if (e.key === 'Escape') {
+        setSearchOpen(false);
+        setMobileMenuOpen(false);
+      }
     };
     window.addEventListener('keydown', handleEsc);
     return () => window.removeEventListener('keydown', handleEsc);
   }, []);
+
+  // Lock body scroll when mobile menu or search is open
+  useEffect(() => {
+    if (mobileMenuOpen || searchOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => { document.body.style.overflow = ''; };
+  }, [mobileMenuOpen, searchOpen]);
+
+  // Close mobile menu on path change
+  useEffect(() => {
+    setMobileMenuOpen(false);
+    setSearchOpen(false);
+  }, [pathname]);
 
   return (
     <>
@@ -66,6 +91,71 @@ const Header = () => {
             </button>
           </form>
           <p className={styles.searchHint}>Press ESC to close</p>
+        </div>
+      </div>
+
+      {/* Mobile Menu Overlay */}
+      <div className={`${styles.mobileMenu} ${mobileMenuOpen ? styles.mobileMenuOpen : ''}`}>
+        <div className={styles.mobileMenuHeader}>
+           <div onClick={() => setMobileMenuOpen(false)}>
+             <Logo variant="white" />
+           </div>
+           <button className={styles.closeMobileBtn} onClick={() => setMobileMenuOpen(false)}>
+             <X size={28} />
+           </button>
+        </div>
+        <div className={styles.mobileMenuContent}>
+           <div className={styles.mobileNavLinkGroup}>
+              <div 
+                className={styles.mobileNavLink} 
+                onClick={() => setMobileHomeOpen(!mobileHomeOpen)}
+                style={{justifyContent: 'space-between'}}
+              >
+                {t('nav.home')}
+                <ChevronDown size={20} className={mobileHomeOpen ? styles.rotate180 : ''} />
+              </div>
+              <div className={`${styles.mobileSubMenu} ${mobileHomeOpen ? styles.mobileSubMenuOpen : ''}`}>
+                 <Link href="/" className={styles.mobileSubLink}>Default Home</Link>
+                 <Link href="/home2" className={styles.mobileSubLink}>Home Variant 2</Link>
+              </div>
+           </div>
+
+           <Link href={`${basePath}/about`} className={styles.mobileNavLink}>{t('nav.about')}</Link>
+           <Link href={`${basePath}/services`} className={styles.mobileNavLink}>{t('nav.services')}</Link>
+           
+           <div className={styles.mobileNavLinkGroup}>
+              <div 
+                className={styles.mobileNavLink} 
+                onClick={() => setMobileProjectsOpen(!mobileProjectsOpen)}
+                style={{justifyContent: 'space-between'}}
+              >
+                {t('nav.projects')}
+                <ChevronDown size={20} className={mobileProjectsOpen ? styles.rotate180 : ''} />
+              </div>
+              <div className={`${styles.mobileSubMenu} ${mobileProjectsOpen ? styles.mobileSubMenuOpen : ''}`}>
+                 <Link href={`${basePath}/done-projects`} className={styles.mobileSubLink}>{t('nav.done_projects')}</Link>
+                 <Link href={`${basePath}/implement-projects`} className={styles.mobileSubLink}>{t('nav.implement_projects')}</Link>
+              </div>
+           </div>
+
+           <Link href={`${basePath}/news`} className={styles.mobileNavLink}>{t('nav.news')}</Link>
+           <Link href={`${basePath}/education`} className={styles.mobileNavLink}>{t('nav.education')}</Link>
+           <Link href={`${basePath}/contact`} className={styles.mobileNavLink}>{t('nav.contact')}</Link>
+           
+           <div className={styles.mobileLangSwitcher}>
+              <button 
+                 className={`${styles.mobileLangBtn} ${language === 'EN' ? styles.activeMobileLang : ''}`}
+                 onClick={() => setLanguage('EN')}
+              >
+                English
+              </button>
+              <button 
+                 className={`${styles.mobileLangBtn} ${language === 'KH' ? styles.activeMobileLang : ''}`}
+                 onClick={() => setLanguage('KH')}
+              >
+                ខ្មែរ
+              </button>
+           </div>
         </div>
       </div>
 
@@ -151,7 +241,10 @@ const Header = () => {
             onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
           />
 
-          <button className={styles.mobileMenuBtn}>
+          <button 
+            className={styles.mobileMenuBtn}
+            onClick={() => setMobileMenuOpen(true)}
+          >
             <Menu size={24} />
           </button>
         </div>

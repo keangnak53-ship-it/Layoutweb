@@ -39,11 +39,18 @@ export default function ProjectDetailPage() {
       >
         <div className={styles.heroOverlay}></div>
         <div className={styles.heroContent}>
-          <span className={styles.projectSubtitle}>{project.category} — {project.location}</span>
+          <span className={styles.projectSubtitle}>{project.category}</span>
           <h1 className={styles.projectTitle}>{project.title}</h1>
-          <div className="mt-6">
-            <Link href="/done-projects" className="text-white flex items-center justify-center gap-2 opacity-80 hover:opacity-100 transition">
-              <ArrowLeft size={18} /> Back to Showcase
+          <div className="flex items-center justify-center gap-2 text-white/80 font-medium">
+             <MapPin size={18} className="text-[#ED1C24]" /> {project.location}
+          </div>
+          
+          <div className="mt-8">
+            <Link 
+              href="/done-projects" 
+              className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 rounded-full text-white transition-all text-sm font-bold uppercase tracking-wide group"
+            >
+              <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" /> Back to Showcase
             </Link>
           </div>
         </div>

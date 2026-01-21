@@ -237,13 +237,32 @@ export default function Home() {
 
       <section className={styles.clientsSection}>
         <div className="container">
-          <h2 className="section-subtitle" style={{marginBottom: '2rem'}}>Trusted By</h2>
+          <div className="text-center mb-10">
+             <span className="section-subtitle">Our Partners</span>
+             <h2 className="section-title">Our Clients</h2>
+          </div>
           <div className={styles.clientsGrid}>
-             <div className={styles.clientLogo}>MINISTRY OF COMMERCE</div>
-             <div className={styles.clientLogo}>PINE LINE</div>
-             <div className={styles.clientLogo}>TOTAL ENERGIES</div>
-             <div className={styles.clientLogo}>BVM GROUP</div>
-             <div className={styles.clientLogo}>CHIP MONG</div>
+             <div className={styles.clientLogo}>
+               <img src="/assets/ACU.png" alt="ACU" title="Anti-Corruption Unit" />
+             </div>
+             <div className={styles.clientLogo}>
+               <img src="/assets/EDC.png" alt="EDC" title="Electricite du Cambodge" />
+             </div>
+             <div className={styles.clientLogo}>
+               <img src="/assets/GCDE.png" alt="GCDE" title="General Department of Customs and Excise" />
+             </div>
+             <div className={styles.clientLogo}>
+               <img src="/assets/MEF.png" alt="MEF" title="Ministry of Economy and Finance" />
+             </div>
+             <div className={styles.clientLogo}>
+               <img src="/assets/MOI.png" alt="MOI" title="Ministry of Interior" />
+             </div>
+             <div className={styles.clientLogo}>
+               <img src="/assets/NCE.jpg" alt="NCE" title="National Committee for Disaster Management" />
+             </div>
+             <div className={styles.clientLogo}>
+               <img src="/assets/NSSF.png" alt="NSSF" title="National Social Security Fund" />
+             </div>
           </div>
         </div>
       </section>

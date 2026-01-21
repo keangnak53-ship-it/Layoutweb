@@ -5,124 +5,78 @@ import PageHero from '@/components/ui/PageHero';
 import { Target, Eye, Award, CheckCircle2, ShieldCheck, Quote, X } from 'lucide-react';
 import styles from './page.module.css';
 
-// Department data
-const departmentData: Record<string, {
+// Team data from user
+const teamData: Record<string, {
   name: string;
-  description: string;
-  responsibilities: string[];
-  teamSize: string;
-  contact: string;
+  role: string;
+  image: string;
+  description?: string;
+  email?: string;
 }> = {
   ceo: {
-    name: 'CEO & Management Team',
-    description: 'The executive leadership team responsible for strategic direction, overall company performance, and major business decisions.',
-    responsibilities: [
-      'Strategic planning and business development',
-      'Financial oversight and investor relations',
-      'Corporate governance and compliance',
-      'Major project approvals and partnerships'
-    ],
-    teamSize: '5 Executive Members',
-    contact: 'ceo@kimmex.com.kh'
+    name: 'Okhna. TOUCH KIM',
+    role: 'CHIEF EXECUTIVE OFFICER',
+    image: '/assets/images/Picture/touch_kim.png',
+    description: 'The visionary leader of KIM MEX Construction, driving the company towards excellence and innovation in the construction industry.',
+    email: 'ceo@kimmex.com.kh'
+  },
+  deputy_gm: {
+    name: 'MR. PAUCH BUNPHEAKDEY',
+    role: 'DEPUTY GENERAL MANAGER',
+    image: '/assets/images/Picture/pauch_bunpheakdey.jpeg',
+    email: 'deputy.gm@kimmex.com.kh'
   },
   finance: {
-    name: 'Finance Department',
-    description: 'Manages all financial operations, budgeting, accounting, and financial reporting for the company.',
-    responsibilities: [
-      'Financial planning and analysis',
-      'Budget management and cost control',
-      'Accounting and bookkeeping',
-      'Tax compliance and auditing'
-    ],
-    teamSize: '12 Team Members',
-    contact: 'finance@kimmex.com.kh'
+    name: 'MR. LENG VANNARITH',
+    role: 'FINANCE DIRECTOR',
+    image: '/assets/images/Picture/leng_vannarith.jpeg',
+    email: 'finance@kimmex.com.kh'
   },
-  hr: {
-    name: 'HR & Admin',
-    description: 'Handles human resources, recruitment, employee relations, and administrative operations.',
-    responsibilities: [
-      'Recruitment and talent acquisition',
-      'Employee training and development',
-      'Payroll and benefits administration',
-      'Office management and facilities'
-    ],
-    teamSize: '8 Team Members',
-    contact: 'hr@kimmex.com.kh'
+  senior_pm: {
+    name: 'MR. OUNG CHAKNORA',
+    role: 'SENIOR PROJECT MANAGER',
+    image: '/assets/images/Picture/oung_chaknora.jpeg',
+    email: 'senior.pm@kimmex.com.kh'
   },
-  purchase: {
-    name: 'Purchase Department',
-    description: 'Responsible for procurement of materials, equipment, and services required for projects.',
-    responsibilities: [
-      'Vendor selection and management',
-      'Purchase order processing',
-      'Price negotiation and contracts',
-      'Supplier quality assurance'
-    ],
-    teamSize: '10 Team Members',
-    contact: 'purchase@kimmex.com.kh'
+  pm: {
+    name: 'MR. SUM ROTANA',
+    role: 'PROJECT MANAGER',
+    image: '/assets/images/Picture/sum_rotana.jpeg',
+    email: 'pm.rotana@kimmex.com.kh'
   },
-  qs: {
-    name: 'QS & Cost Control',
-    description: 'Quantity surveying and cost management to ensure projects stay within budget.',
-    responsibilities: [
-      'Cost estimation and budgeting',
-      'Bill of quantities preparation',
-      'Contract administration',
-      'Cost monitoring and reporting'
-    ],
-    teamSize: '15 Team Members',
-    contact: 'qs@kimmex.com.kh'
+  mep_pm: {
+    name: 'MR. KRAI KEAK',
+    role: 'MEP OPERATION PROJECT MANAGER',
+    image: '/assets/images/Picture/krai_keak.jpeg',
+    email: 'mep.Keak@kimmex.com.kh'
+  },
+  deputy_arch: {
+    name: 'MR. CHHUNDY RYTA',
+    role: 'DEPUTY ARCHITECT MANAGER',
+    image: '/assets/images/Picture/chhundy_ryta.jpeg',
+    email: 'arch.ryta@kimmex.com.kh'
+  },
+  mep_design: {
+    name: 'MR. TOUCH PUTHEANY',
+    role: 'MEP DESIGN MANAGER',
+    image: '/assets/images/Picture/touch_putheany.jpeg',
+    email: 'mep.design@kimmex.com.kh'
+  },
+  deputy_qs: {
+    name: 'MR. RY KEN',
+    role: 'DEPUTY QS MANAGER',
+    image: '/assets/images/Picture/ry_ken.jpeg',
+    email: 'qs.ken@kimmex.com.kh'
   },
   warehouse: {
-    name: 'Warehouse & Logistics',
-    description: 'Manages inventory, storage, and distribution of materials and equipment.',
-    responsibilities: [
-      'Inventory management',
-      'Material receiving and dispatch',
-      'Logistics coordination',
-      'Equipment maintenance'
-    ],
-    teamSize: '20 Team Members',
-    contact: 'warehouse@kimmex.com.kh'
-  },
-  stock: {
-    name: 'Stock Control',
-    description: 'Monitors and controls stock levels to ensure optimal inventory management.',
-    responsibilities: [
-      'Stock level monitoring',
-      'Inventory auditing',
-      'Reorder point management',
-      'Stock reporting and analysis'
-    ],
-    teamSize: '8 Team Members',
-    contact: 'stock@kimmex.com.kh'
-  },
-  design: {
-    name: 'Detailed Design',
-    description: 'Creates detailed architectural and engineering designs for construction projects.',
-    responsibilities: [
-      'Architectural design and drafting',
-      'Structural engineering',
-      '3D modeling and visualization',
-      'Design documentation'
-    ],
-    teamSize: '18 Team Members',
-    contact: 'design@kimmex.com.kh'
-  },
-  site: {
-    name: 'Site Operation',
-    description: 'Manages on-site construction activities, safety, and project execution.',
-    responsibilities: [
-      'Site supervision and management',
-      'Safety compliance and monitoring',
-      'Quality control inspections',
-      'Progress reporting'
-    ],
-    teamSize: '50+ Team Members',
-    contact: 'site@kimmex.com.kh'
+    name: 'MR. HONG BUNNA',
+    role: 'WAREHOUSE MANAGER',
+    image: '/assets/images/Picture/hong_bunna.jpeg',
+    email: 'warehouse@kimmex.com.kh'
   }
 };
 
+/* ... milestones array remains ... */
 const milestones = [
   {
     year: '2000',
@@ -151,14 +105,14 @@ const milestones = [
 ];
 
 export default function AboutPage() {
-  const [selectedDept, setSelectedDept] = useState<string | null>(null);
+  const [selectedMember, setSelectedMember] = useState<string | null>(null);
   
-  const openDeptModal = (deptKey: string) => {
-    setSelectedDept(deptKey);
+  const openMemberModal = (key: string) => {
+    setSelectedMember(key);
   };
   
-  const closeDeptModal = () => {
-    setSelectedDept(null);
+  const closeMemberModal = () => {
+    setSelectedMember(null);
   };
   
   return (
@@ -212,9 +166,9 @@ export default function AboutPage() {
             </div>
             <div>
               <img 
-                src="https://images.unsplash.com/photo-1531973576160-7125cdcd63e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                src="/images/Thumbnail.jpg" 
                 alt="About Kim Mex" 
-                style={{ borderRadius: '8px', boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }}
+                style={{ width: '100%', height: 'auto', maxHeight: '450px', objectFit: 'cover', borderRadius: '8px', boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }}
               />
             </div>
           </div>
@@ -226,7 +180,7 @@ export default function AboutPage() {
         <div className="container">
           <div className={styles.ceoGrid}>
             <div className={styles.ceoImageWrapper}>
-               <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="CEO" />
+               <img src="/assets/images/Picture/touch_kim.png" alt="CEO" style={{objectFit: 'cover', objectPosition: 'top'}} />
             </div>
             <div className={styles.ceoContent}>
                <Quote size={40} className="text-[#ED1C24] mb-4" />
@@ -235,15 +189,15 @@ export default function AboutPage() {
                  "At KIM MEX, we believe that construction is not just about concrete and steel, but about building current and future dreams. Our commitment to integrity and quality has been the cornerstone of our success for over 20 years. We look forward to continuing to build the foundations of Cambodia's growth."
                </p>
                <div>
-                 <h4 className="text-xl font-bold text-[#2E3192]">Mr. Kim Mex</h4>
-                 <span className="text-[#ED1C24] font-semibold uppercase tracking-wider text-sm">CEO & Founder</span>
+                 <h4 className="text-xl font-bold text-[#2E3192]">Okhna. TOUCH KIM</h4>
+                 <span className="text-[#ED1C24] font-semibold uppercase tracking-wider text-sm">CHIEF EXECUTIVE OFFICER</span>
                </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 5. Milestones - New Infographic Style */}
+      {/* 5. Milestones */}
       <section className={styles.milestonesSection}>
         <div className="container">
           <div className="text-center">
@@ -252,9 +206,7 @@ export default function AboutPage() {
           </div>
           
           <div className={styles.timelineContainer}>
-            {/* The Central Line */}
             <div className={styles.timelineLine}></div>
-            
             <div className={styles.timelineGrid}>
                {milestones.map((item, index) => (
                  <div key={index} className={`${styles.timelineItem} ${item.position === 'top' ? styles.timelineItemTop : styles.timelineItemBottom}`}>
@@ -283,97 +235,53 @@ export default function AboutPage() {
           <div className={styles.orgChartWrapper}>
              {/* CEO Level */}
              <div className={styles.orgLevel}>
-                <div className={`${styles.orgNode} ${styles.orgTopNode}`}>
+                <div className={`${styles.orgNode} ${styles.orgTopNode}`} onClick={() => openMemberModal('ceo')}>
                    <div className={styles.orgImageWrapper}>
-                     <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="CEO" />
+                     <img src="/assets/images/Picture/touch_kim.png" alt="CEO" />
                    </div>
-                   <div className={styles.orgNodeTitle}>CEO & Management Team</div>
+                   <div className={styles.orgNodeTitle}>Okhna. TOUCH KIM</div>
+                   <div className={styles.orgNodeRole}>CHIEF EXECUTIVE OFFICER</div>
                 </div>
              </div>
              
              {/* Vertical Line from CEO */}
              <div className={styles.verticalLine}></div>
              
-             {/* Second Level - Main Departments */}
+             {/* Second Level - 5 Managers */}
              <div className={styles.orgLevel}>
                 <div className={styles.horizontalLineContainer}>
-                   <div className={styles.horizontalLine}></div>
+                   <div className={styles.horizontalLine} style={{width: '80%'}}></div>
                 </div>
                 <div className={styles.orgRow}>
-                   <div className={styles.orgNode}>
-                      <div className={styles.verticalConnector}></div>
-                      <div className={styles.orgImageWrapper}>
-                        <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Finance" />
-                      </div>
-                      <div className={styles.orgNodeTitle}>Finance Dept</div>
-                   </div>
-                   <div className={styles.orgNode}>
-                      <div className={styles.verticalConnector}></div>
-                      <div className={styles.orgImageWrapper}>
-                        <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="HR" />
-                      </div>
-                      <div className={styles.orgNodeTitle}>HR & Admin</div>
-                   </div>
-                   <div className={styles.orgNode}>
-                      <div className={styles.verticalConnector}></div>
-                      <div className={styles.orgImageWrapper}>
-                        <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Purchase" />
-                      </div>
-                      <div className={styles.orgNodeTitle}>Purchase Dept</div>
-                   </div>
+                   {['deputy_gm', 'finance', 'senior_pm', 'pm', 'mep_pm'].map((key) => (
+                     <div key={key} className={styles.orgNode} onClick={() => openMemberModal(key)}>
+                        <div className={styles.verticalConnector}></div>
+                        <div className={styles.orgImageWrapper}>
+                          <img src={teamData[key].image} alt={teamData[key].name} />
+                        </div>
+                        <div className={styles.orgNodeTitle}>{teamData[key].name}</div>
+                        <div className={styles.orgNodeRole}>{teamData[key].role}</div>
+                     </div>
+                   ))}
                 </div>
              </div>
              
-             {/* Third Level - Operational Departments */}
+             {/* Third Level - 4 Managers */}
              <div className={styles.orgLevel}>
                 <div className={styles.horizontalLineContainer}>
-                   <div className={styles.horizontalLine}></div>
+                   <div className={styles.horizontalLine} style={{width: '60%'}}></div>
                 </div>
                 <div className={styles.orgRow}>
-                   <div className={styles.orgNode}>
-                      <div className={styles.verticalConnector}></div>
-                      <div className={styles.orgImageWrapper}>
-                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="QS" />
-                      </div>
-                      <div className={styles.orgNodeTitle}>QS & Cost Control</div>
-                   </div>
-                   <div className={styles.orgNode}>
-                      <div className={styles.verticalConnector}></div>
-                      <div className={styles.orgImageWrapper}>
-                        <img src="https://images.unsplash.com/photo-1553413077-190dd305871c?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Warehouse" />
-                      </div>
-                      <div className={styles.orgNodeTitle}>Warehouse & Logistics</div>
-                   </div>
-                   <div className={styles.orgNode}>
-                      <div className={styles.verticalConnector}></div>
-                      <div className={styles.orgImageWrapper}>
-                        <img src="https://images.unsplash.com/photo-1586528116493-a029325540fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Stock" />
-                      </div>
-                      <div className={styles.orgNodeTitle}>Stock Control</div>
-                   </div>
-                </div>
-             </div>
-             
-             {/* Fourth Level - Technical Departments */}
-             <div className={styles.orgLevel}>
-                <div className={styles.horizontalLineContainer}>
-                   <div className={styles.horizontalLine}></div>
-                </div>
-                <div className={styles.orgRow}>
-                   <div className={styles.orgNode}>
-                      <div className={styles.verticalConnector}></div>
-                      <div className={styles.orgImageWrapper}>
-                        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Design" />
-                      </div>
-                      <div className={styles.orgNodeTitle}>Detailed Design</div>
-                   </div>
-                   <div className={styles.orgNode}>
-                      <div className={styles.verticalConnector}></div>
-                      <div className={styles.orgImageWrapper}>
-                        <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Site" />
-                      </div>
-                      <div className={styles.orgNodeTitle}>Site Operation</div>
-                   </div>
+                   {['deputy_arch', 'mep_design', 'deputy_qs', 'warehouse'].map((key) => (
+                     <div key={key} className={styles.orgNode} onClick={() => openMemberModal(key)}>
+                        <div className={styles.verticalConnector}></div>
+                        <div className={styles.orgImageWrapper}>
+                          <img src={teamData[key].image} alt={teamData[key].name} />
+                        </div>
+                        <div className={styles.orgNodeTitle}>{teamData[key].name}</div>
+                        <div className={styles.orgNodeRole}>{teamData[key].role}</div>
+                     </div>
+                   ))}
                 </div>
              </div>
           </div>
@@ -420,6 +328,35 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+      {/* Member Detail Modal */}
+      {selectedMember && teamData[selectedMember] && (
+        <div className={styles.modalOverlay} onClick={closeMemberModal}>
+          <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
+            <button className={styles.closeModal} onClick={closeMemberModal}>
+              <X size={24} />
+            </button>
+            <div className="flex flex-col items-center mb-6">
+               <div style={{width: '120px', height: '120px', borderRadius: '50%', overflow: 'hidden', marginBottom: '15px'}}>
+                  <img src={teamData[selectedMember].image} alt={teamData[selectedMember].name} style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+               </div>
+               <h3 className={styles.modalTitle} style={{textAlign: 'center', fontSize: '1.5rem', marginBottom: '5px'}}>{teamData[selectedMember].name}</h3>
+               <p className="text-[#ED1C24] font-bold text-sm tracking-wider">{teamData[selectedMember].role}</p>
+            </div>
+            
+            {teamData[selectedMember].description && (
+               <p className={styles.modalDesc} style={{textAlign: 'center'}}>{teamData[selectedMember].description}</p>
+            )}
+            
+            <div className={styles.modalFooter} style={{textAlign: 'center', borderTop: 'none', paddingTop: 0}}>
+              {teamData[selectedMember].email && (
+                <div className="mt-2">
+                  <strong>Email:</strong> <a href={`mailto:${teamData[selectedMember].email}`} className="text-[#ED1C24] hover:underline">{teamData[selectedMember].email}</a>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }

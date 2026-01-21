@@ -65,6 +65,8 @@
   margin-bottom: 20px;
   text-transform: uppercase;
   letter-spacing: 2px;
+  color: #ffffff;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.5);
 }
 
 .highlight {

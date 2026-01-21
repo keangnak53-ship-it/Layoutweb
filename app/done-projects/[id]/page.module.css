@@ -5,13 +5,14 @@
 
 .hero {
   position: relative;
-  height: 60vh;
-  min-height: 400px;
+  height: 70vh;
+  min-height: 500px;
   display: flex;
   align-items: center;
   justify-content: center;
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
   color: #fff;
 }
 
@@ -21,95 +22,123 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7));
+  background: linear-gradient(to bottom, rgba(46, 49, 146, 0.4), rgba(46, 49, 146, 0.8));
 }
 
 .heroContent {
   position: relative;
   z-index: 2;
   text-align: center;
-  max-width: 900px;
+  max-width: 1000px;
   padding: 0 20px;
+  transform: translateY(-40px);
 }
 
 .projectTitle {
-  font-size: 3.5rem;
+  font-size: 4rem;
   font-weight: 800;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  line-height: 1.1;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.3);
 }
 
 .projectSubtitle {
-  font-size: 1.25rem;
-  color: rgba(255,255,255,0.9);
+  font-size: 1.1rem;
+  color: #fff;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
+  background: rgba(237, 28, 36, 0.9);
+  padding: 8px 16px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-bottom: 25px;
+  font-weight: 700;
 }
 
-/* Key Facts */
+/* Key Facts - Floating Card */
 .factsSection {
-  background-color: var(--primary-navi);
-  padding: 40px 0;
-  color: #fff;
+  background-color: transparent;
+  padding: 0 20px;
+  margin-top: -80px;
+  position: relative;
+  z-index: 10;
+  margin-bottom: 60px;
 }
 
 .factsGrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1px; /* Gap for divider effect */
+  background: #eee; /* Divider color */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+  border: 1px solid rgba(0,0,0,0.05);
 }
 
 .factItem {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 8px;
+  background: #fff;
+  padding: 30px 20px;
+  text-align: center;
+  transition: background 0.3s;
+}
+
+.factItem:hover {
+  background: #f9f9fa;
 }
 
 .factLabel {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.6);
+  color: var(--text-gray);
   font-weight: 700;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
 }
 
 .factValue {
   font-size: 1.1rem;
-  font-weight: 600;
+  font-weight: 700;
+  color: var(--primary-navi);
 }
 
 /* Content Sections */
 .section {
-  padding: 80px 0;
+  padding: 60px 0;
 }
 
 .sectionTitle {
-  font-size: 2rem;
+  font-size: 2.25rem;
   color: var(--primary-navi);
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   position: relative;
   display: inline-block;
+  font-weight: 800;
 }
 
 .sectionTitle::after {
   content: '';
   position: absolute;
-  bottom: -10px;
+  bottom: -12px;
   left: 0;
-  width: 50px;
-  height: 3px;
+  width: 60px;
+  height: 4px;
   background-color: var(--primary-red);
+  border-radius: 2px;
 }
 
 .narrativeGrid {
   display: grid;
-  grid-template-columns: 1.5fr 1fr;
-  gap: 60px;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 80px;
 }
 
 .narrativeText {
-  color: var(--text-gray);
+  color: #555;
   line-height: 1.8;
-  font-size: 1.1rem;
+  font-size: 1.125rem;
 }
 
 .narrativeBlock {
@@ -118,47 +147,57 @@
 
 .narrativeBlock h4 {
   color: var(--primary-navi);
-  margin-bottom: 15px;
-  font-size: 1.25rem;
+  margin-bottom: 12px;
+  font-size: 1.4rem;
+  font-weight: 700;
 }
 
 /* Scope & Challenges */
 .scopeList {
   list-style: none;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 15px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  border: 1px solid #eee;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.04);
 }
 
 .scopeItem {
   display: flex;
   align-items: center;
-  gap: 10px;
-  color: var(--text-gray);
-  font-weight: 500;
+  gap: 15px;
+  color: var(--primary-navi);
+  font-weight: 600;
+  font-size: 1rem;
 }
 
 .scopeIcon {
-  color: var(--primary-red);
+  color: var(--secondary-gold);
+  min-width: 20px;
 }
 
 .challengeItem {
-  background-color: #f9f9f9;
-  padding: 30px;
-  border-radius: 8px;
-  border-left: 4px solid var(--primary-red);
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  border-left: 5px solid var(--primary-red);
   margin-bottom: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 
 .challengeItem h5 {
   color: var(--primary-navi);
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   font-size: 1.1rem;
+  font-weight: 700;
 }
 
 .challengeItem p {
   color: var(--text-gray);
-  font-size: 1rem;
+  font-size: 0.95rem;
   line-height: 1.6;
 }
 
@@ -166,53 +205,55 @@
 .galleryGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 24px;
 }
 
 .galleryItem {
-  height: 300px;
-  border-radius: 8px;
+  height: 320px;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  position: relative;
 }
 
 .galleryItem img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease;
+  transition: transform 0.6s ease;
 }
 
 .galleryItem:hover img {
-  transform: scale(1.05);
+  transform: scale(1.08);
 }
 
 /* Related */
 .relatedGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  gap: 40px;
 }
 
 .relatedCard {
   background: #fff;
-  border-radius: 12px;
+  border-radius: 0;
   overflow: hidden;
-  box-shadow: var(--shadow-sm);
+  box-shadow: none;
   transition: all 0.3s ease;
-  border: 1px solid #eee;
+  border: none;
 }
 
 .relatedCard:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-lg);
-  border-color: var(--primary-red);
+  transform: translateY(-10px);
 }
 
 .relatedImage {
   position: relative;
-  height: 220px;
+  height: 280px;
   overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
 }
 
 .relatedImage img {
