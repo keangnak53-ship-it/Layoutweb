@@ -210,27 +210,15 @@ a {
 .home2-style .input,
 .home2-style .select,
 .home2-style img {
-  border-radius: 0 !important;
-  clip-path: polygon(
-    0 0, 
-    100% 0, 
-    100% 100%, 
-    15px 100%, 
-    0 calc(100% - 15px)
-  ); /* Architectural cut for 'corner shape' feel */
+  border-radius: 4px !important; /* Restored standard radius */
+  clip-path: none !important; /* Removed cut effect */
   transition: all 0.3s ease;
 }
 
 .home2-style .btn:hover,
 .home2-style .serviceCard:hover {
-  clip-path: polygon(
-    15px 0, 
-    100% 0, 
-    100% calc(100% - 15px), 
-    calc(100% - 15px) 100%, 
-    0 100%, 
-    0 15px
-  ); /* Dynamic corner change on hover */
+  clip-path: none !important; /* Removed cut on hover too */
+  transform: translateY(-5px);
 }
 
 /* --- Home2 Specific Animations --- */

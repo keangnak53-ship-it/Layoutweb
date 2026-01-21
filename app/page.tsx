@@ -154,14 +154,11 @@ export default function Home() {
 
       <section className={styles.section}>
         <div className="container">
-          <div className="flex justify-between items-end mb-10">
+          <div className="mb-10">
              <div>
                 <span className="section-subtitle">Portfolio</span>
                 <h2 className="section-title">Featured Projects</h2>
              </div>
-             <Link href="/done-projects" className="flex items-center gap-2 font-semibold text-[#2E3192] hover:text-[#ED1C24]">
-               See All Projects <ArrowRight size={18} />
-             </Link>
           </div>
           
           <div className={styles.projectsGrid}>

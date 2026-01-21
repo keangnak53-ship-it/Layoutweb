@@ -255,9 +255,17 @@
   z-index: 0;
 }
 
-/* Org Chart - Hierarchical Tree Structure */
+/* Connecting Lines - REMOVED for clean layout */
+.verticalLine,
+.verticalConnector,
+.horizontalLineContainer,
+.horizontalLine {
+  display: none;
+}
+
+/* Org Chart - Circular Infographic Layout */
 .orgSection {
-  background: var(--bg-offwhite);
+  background: #f8fbff; /* Very light blue background like reference */
   padding: 100px 0;
   text-align: center;
 }
@@ -270,65 +278,51 @@
 
 .orgLevel {
   position: relative;
+  margin-top: 40px;
   margin-bottom: 60px;
 }
 
 .orgRow {
   display: flex;
   justify-content: center;
-  gap: 10px; /* Reduced gap to fit 5 items */
-  position: relative;
+  gap: 20px;
   flex-wrap: wrap;
 }
 
 .orgNode {
-  background: #fff;
-  padding: 15px 10px;
-  border-radius: 4px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  border: 1px solid #eee;
+  background: transparent; /* No card background */
+  padding: 0;
+  border: none;
+  box-shadow: none;
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-weight: 600;
-  color: var(--primary-navi);
-  width: 220px; /* Slightly wider for names */
+  width: 180px; /* Width for text wrapping */
+  flex: 0 0 180px;
   position: relative;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
 .orgNode:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-  border-color: var(--primary-red);
-}
-
-.orgNodeTitle {
-  font-size: 13px;
-  text-align: center;
-  line-height: 1.3;
-  margin-top: 10px;
-  text-transform: uppercase;
-  color: var(--text-dark);
-}
-
-.orgNodeRole {
-  font-size: 11px;
-  color: var(--text-gray);
-  margin-top: 4px;
-  font-weight: 500;
-  text-transform: uppercase;
 }
 
 .orgImageWrapper {
-  width: 100%;
-  height: 240px; /* Rectangular aspect ratio */
-  border-radius: 0;
+  width: 140px; /* Circular Dimension */
+  height: 140px;
+  border-radius: 50%; /* Make it round */
   overflow: hidden;
-  margin-bottom: 5px;
-  border: none;
-  box-shadow: none;
+  margin-bottom: 15px;
+  border: 4px solid #fff;
+  box-shadow: 0 0 0 1px #e0e0e0, 0 10px 20px rgba(0,0,0,0.1); /* Inner border + Outer Shadow/Glow */
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+.orgNode:hover .orgImageWrapper {
+  box-shadow: 0 0 0 4px rgba(237, 28, 36, 0.1), 0 15px 30px rgba(0,0,0,0.15);
+  border-color: #fff;
 }
 
 .orgImageWrapper img {
@@ -338,41 +332,53 @@
   object-position: top;
 }
 
-.orgTopNode {
-  background: transparent;
-  color: var(--text-dark);
-  font-size: 1.1rem;
-  padding: 0;
-  width: 280px;
-  margin: 0 auto;
-  border: none;
-  box-shadow: none;
-}
-
-.orgTopNode:hover {
-  transform: none;
-  box-shadow: none;
-}
-
-.orgTopNode .orgNodeTitle {
-  color: var(--text-dark);
-  font-size: 16px;
+.orgNodeTitle {
+  font-size: 15px;
+  text-align: center;
+  line-height: 1.3;
   font-weight: 800;
+  color: var(--primary-navi);
+  margin-bottom: 4px;
+}
+
+.orgNodeRole {
+  font-size: 12px;
+  color: #777;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* Specific Style for TOP Node (CEO) - Larger Circle */
+.orgTopNode {
+  width: 240px;
+  flex: 0 0 240px;
+  padding: 0;
+  margin: 0 auto;
+  z-index: 2;
 }
 
 .orgTopNode .orgImageWrapper {
-  width: 100%;
-  height: 320px;
-  border-radius: 4px;
+  width: 180px;
+  height: 180px;
+  border-width: 6px;
+  box-shadow: 0 0 0 1px #d0d0d0, 0 15px 30px rgba(46, 49, 146, 0.15);
 }
 
+.orgTopNode .orgNodeTitle {
+  font-size: 20px;
+  margin-top: 10px;
+}
 
+.orgTopNode .orgNodeRole {
+  font-size: 14px;
+  color: var(--primary-red);
+}
 
-/* Connecting Lines */
+/* Connecting Lines - Thin and Elegant */
 .verticalLine {
-  width: 2px;
+  width: 1px;
   height: 40px;
-  background: #cbd5e0;
+  background: #cbd5e0; /* Lighter grey line */
   margin: 0 auto;
 }
 
@@ -381,9 +387,21 @@
   top: -40px;
   left: 50%;
   transform: translateX(-50%);
-  width: 2px;
+  width: 1px;
   height: 40px;
   background: #cbd5e0;
+  display: block !important;
+}
+
+.verticalConnector::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -2px;
+  width: 5px;
+  height: 5px;
+  background: #cbd5e0;
+  border-radius: 50%;
 }
 
 .horizontalLineContainer {
@@ -391,15 +409,16 @@
   top: -40px;
   left: 0;
   right: 0;
-  height: 2px;
-  display: flex;
+  height: 40px;
+  display: flex !important;
   justify-content: center;
+  align-items: flex-start;
 }
 
 .horizontalLine {
-  height: 2px;
+  height: 1px;
   background: #cbd5e0;
-  width: 70%;
+  display: block !important;
 }
 
 /* Quality & Safety */
