@@ -38,8 +38,9 @@ const Logo = ({ variant = 'default' }: LogoProps) => {
            color: subTextColor, 
            textTransform: 'uppercase', 
            letterSpacing: '0.4px',
-           whiteSpace: 'nowrap',
-           marginTop: '4px'
+           marginTop: '4px',
+           lineHeight: '1.2',
+           maxWidth: '180px'
          }}>Construction & Investment CO.,LTD.</span>
        </div>
     </div>

@@ -159,4 +159,8 @@
     width: 40px;
     height: 40px;
   }
+  .buttonGroup {
+    flex-direction: column;
+    padding: 0 40px;
+  }
 }

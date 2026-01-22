@@ -38,7 +38,7 @@ export default function Home2() {
       <section className={styles.section}>
         <div className="container">
           <div className={styles.aboutPreview}>
-             <span className="section-subtitle">Who We Are (Clone Home2)</span>
+             <span className="section-subtitle">Who We Are</span>
              <h2 className="section-title">About KIM MEX</h2>
              <p className={styles.aboutText}>
                Established in 2000, KIM MEX is a premier construction and engineering firm in Cambodia. 

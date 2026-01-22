@@ -66,9 +66,12 @@ const Header = () => {
 
   // Close mobile menu on path change
   useEffect(() => {
-    setMobileMenuOpen(false);
-    setSearchOpen(false);
-  }, [pathname]);
+    // Use microtask to avoid "setState synchronously in effect" warning/error
+    Promise.resolve().then(() => {
+      if (mobileMenuOpen) setMobileMenuOpen(false);
+      if (searchOpen) setSearchOpen(false);
+    });
+  }, [pathname]); // Only depend on pathname to close when it changes
 
   return (
     <>

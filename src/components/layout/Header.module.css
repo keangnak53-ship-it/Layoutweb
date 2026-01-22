@@ -332,10 +332,21 @@
 }
 
 @media (max-width: 900px) {
+  .header { 
+    background: rgba(0, 13, 26, 0.9) !important; 
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid var(--primary-red);
+  }
+  .container {
+    height: 70px;
+    padding: 0 15px;
+  }
   .nav { display: none; }
   .mobileMenuBtn { display: block; }
   .headerScrolled .mobileMenuBtn { color: #fff; }
   .searchForm input { font-size: 1.5rem; }
+  .langSwitcher { display: none; } /* Show in mobile menu instead */
+  .rightSection { gap: 15px; }
 }
 
 /* Home2 Sharp Header */

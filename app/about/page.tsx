@@ -158,7 +158,7 @@ export default function AboutPage() {
               <span className="section-subtitle">Our Story</span>
               <h2 className={styles.introTitle}>Building A Better Cambodia Since 2000</h2>
               <p className={styles.introText}>
-                KIM MEX Construction began with a simple vision: to provide high-quality engineering and construction services that meet international standards. Over two decades later, we have grown into one of Cambodia's most trusted firms, delivering complex infrastructure, commercial, and residential projects.
+                KIM MEX Construction began with a simple vision: to provide high-quality engineering and construction services that meet international standards. Over two decades later, we have grown into one of Cambodia&apos;s most trusted firms, delivering complex infrastructure, commercial, and residential projects.
               </p>
               <p className={styles.introText}>
                 From humble beginnings, we have expanded our capabilities to include large-scale government infrastructure, premium high-rise developments, and industrial facilities. Our journey is defined by resilient growth and a relentless pursuit of excellence.
@@ -186,7 +186,7 @@ export default function AboutPage() {
                <Quote size={40} className="text-[#ED1C24] mb-4" />
                <h2 className="mb-6 text-[#2E3192]">Message From CEO</h2>
                <p className={styles.ceoQuote}>
-                 "At KIM MEX, we believe that construction is not just about concrete and steel, but about building current and future dreams. Our commitment to integrity and quality has been the cornerstone of our success for over 20 years. We look forward to continuing to build the foundations of Cambodia's growth."
+                 "At KIM MEX, we believe that construction is not just about concrete and steel, but about building current and future dreams. Our commitment to integrity and quality has been the cornerstone of our success for over 20 years. We look forward to continuing to build the foundations of Cambodia&apos;s growth."
                </p>
                <div>
                  <h4 className="text-xl font-bold text-[#2E3192]">Okhna. TOUCH KIM</h4>

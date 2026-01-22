@@ -64,15 +64,16 @@ const translations: Record<Language, Record<string, string>> = {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [language, setLanguage] = useState<Language>('EN');
-
-  // Load saved language preference and apply font classes
-  useEffect(() => {
-    const savedLang = localStorage.getItem('app_lang') as Language;
-    if (savedLang && (savedLang === 'EN' || savedLang === 'KH')) {
-      setLanguage(savedLang);
+  const [language, setLanguage] = useState<Language>(() => {
+    // Only access localStorage on client-side
+    if (typeof window !== 'undefined') {
+      const savedLang = localStorage.getItem('app_lang') as Language;
+      if (savedLang && (savedLang === 'EN' || savedLang === 'KH')) {
+        return savedLang;
+      }
     }
-  }, []);
+    return 'EN';
+  });
 
   useEffect(() => {
     // Update body class for font switching

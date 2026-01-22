@@ -40,7 +40,7 @@ const serviceSlides = [
     image: 'https://images.unsplash.com/photo-1581093196277-9f608beda3d4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
     title: 'Specialized',
     subtitle: 'Technical Works',
-    desc: 'MEP installation, structural analysis, and renovation services tailored for Cambodia\'s unique landscape.',
+    desc: 'MEP installation, structural analysis, and renovation services tailored for Cambodia&apos;s unique landscape.',
     primaryBtn: 'Explore Work',
     primaryLink: '/done-projects',
     secondaryBtn: 'Contact Team',
@@ -167,7 +167,7 @@ export default function ServicesPage() {
                  <span className={styles.whoItIsFor}>For Commercial & Residential Upgrades</span>
                  <h3 className={styles.serviceTitle}>Building Renovation</h3>
                  <p className={styles.serviceMainDesc}>
-                    Revitalizing existing structures to meet modern standards. Whether it's a historic restoration 
+                    Revitalizing existing structures to meet modern standards. Whether it&apos;s a historic restoration 
                     or a modern office fit-out, we breathe new life into spaces while preserving integrity.
                  </p>
                  
@@ -429,7 +429,7 @@ export default function ServicesPage() {
             <div className={styles.ctaContent}>
                <h2>Ready to Start Your Project?</h2>
                <p>
-                  Partner with Cambodia's leading engineering and construction firm for your next development.
+                  Partner with Cambodia&apos;s leading engineering and construction firm for your next development.
                </p>
                <div className={styles.ctaBtns}>
                   <Link href="/contact" className="btn btn-primary">Get a Free Quote</Link>
