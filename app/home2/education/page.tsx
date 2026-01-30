@@ -22,7 +22,7 @@ const categories = [
   "HR & Admin"
 ];
 
-const categoryIcons: Record<string, any> = {
+const categoryIcons: Record<string, React.ReactNode> = {
   "Detail Design": <PenTool size={24} />,
   "Civil Work": <HardHat size={24} />,
   "Finishing Work": <Layers size={24} />,

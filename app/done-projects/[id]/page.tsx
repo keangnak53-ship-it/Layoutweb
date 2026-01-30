@@ -9,7 +9,7 @@ import {
   Ruler, Banknote, CheckCircle2, AlertCircle,
   ArrowLeft, ArrowRight
 } from 'lucide-react';
-import { projects } from '@/data/projects';
+import { projects, Project } from '@/data/projects';
 import styles from './page.module.css';
 
 export default function ProjectDetailPage() {
@@ -192,7 +192,7 @@ export default function ProjectDetailPage() {
 }
 
 // Simple internal ProjectCard for related items
-function ProjectCard({ project }: { project: any }) {
+function ProjectCard({ project }: { project: Project }) {
   return (
     <div className={styles.relatedCard}>
       <div className={styles.relatedImage}>

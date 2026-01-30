@@ -167,7 +167,7 @@ export default function ServicesPage() {
                  <span className={styles.whoItIsFor}>For Commercial & Residential Upgrades</span>
                  <h3 className={styles.serviceTitle}>Building Renovation</h3>
                  <p className={styles.serviceMainDesc}>
-                    Revitalizing existing structures to meet modern standards. Whether it's a historic restoration 
+                    Revitalizing existing structures to meet modern standards. Whether it&apos;s a historic restoration 
                     or a modern office fit-out, we breathe new life into spaces while preserving integrity.
                  </p>
                  
@@ -429,7 +429,7 @@ export default function ServicesPage() {
             <div className={styles.ctaContent}>
                <h2>Ready to Start Your Project?</h2>
                <p>
-                  Partner with Cambodia's leading engineering and construction firm for your next development.
+                  Partner with Cambodia&apos;s leading engineering and construction firm for your next development.
                </p>
                <div className={styles.ctaBtns}>
                   <Link href="/contact" className="btn btn-primary">Get a Free Quote</Link>

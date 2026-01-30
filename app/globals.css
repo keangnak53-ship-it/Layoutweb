@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700&family=Siemreap&display=swap');
+
 
 :root {
   /* Brand Colors - Exact Match to Uploaded Image (Midnight Navy) */
@@ -44,7 +45,8 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
-  font-family: 'Inter', 'Khmer OS System', sans-serif;
+  font-family: 'Inter', 'Khmer OS Siemreap', 'Siemreap', 'Khmer OS System', sans-serif;
+
   background-color: var(--bg-light);
   color: var(--text-dark);
   scroll-behavior: smooth;
@@ -56,11 +58,13 @@ body {
 .khmer-font *,
 .khmer-font h1, .khmer-font h2, .khmer-font h3, .khmer-font h4, .khmer-font h5, .khmer-font h6,
 .khmer-font button, .khmer-font input, .khmer-font select, .khmer-font textarea, .khmer-font a {
-  font-family: 'Khmer OS System', 'Inter', sans-serif !important;
+  font-family: 'Khmer OS Siemreap', 'Siemreap', 'Khmer OS System', 'Inter', sans-serif !important;
+
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Inter', 'Khmer OS System', sans-serif;
+  font-family: 'Inter', 'Khmer OS Siemreap', 'Siemreap', 'Khmer OS System', sans-serif;
+
   font-weight: 700;
   line-height: 1.25;
   color: var(--primary-blue);

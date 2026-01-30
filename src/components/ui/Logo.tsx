@@ -40,8 +40,8 @@ const Logo = ({ variant = 'default' }: LogoProps) => {
            letterSpacing: '0.4px',
            marginTop: '4px',
            lineHeight: '1.2',
-           maxWidth: '180px'
-         }}>Construction & Investment CO.,LTD.</span>
+           maxWidth: '160px'
+         }}>Construction & Investment<br />CO.,LTD.</span>
        </div>
     </div>
   );

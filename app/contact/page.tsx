@@ -93,7 +93,7 @@ export default function ContactPage() {
                 <p style={{fontSize: '0.9rem', marginBottom: '20px', opacity: 0.9}}>
                   Interested in our technical excellence? Explore our technical education and department standards.
                 </p>
-                <a href="/education" className="btn btn-outline" style={{width: '100%', borderColor: 'rgba(255,255,255,0.3)'}}>View Technical Education</a>
+                <Link href="/education" className="btn btn-outline" style={{width: '100%', borderColor: 'rgba(255,255,255,0.3)'}}>View Technical Education</Link>
               </div>
             </div>
 
