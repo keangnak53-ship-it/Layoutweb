@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { 
   Building2, HardHat, FileText, Anchor, 
   CheckCircle2, ShieldCheck, Clock, Award,
@@ -162,7 +163,14 @@ export default function Home2() {
           </div>
           
           <div className={styles.projectsGrid}>
-             <div className={styles.projectCard} style={{backgroundImage: "url('/images/Thumbnail-1.jpg')"}}>
+             <div className={styles.projectCard}>
+                <Image 
+                  src="/images/Thumbnail-1.jpg" 
+                  alt="Ministry Office Complex" 
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
                 <div className={styles.projectOverlay}>
                    <h3>Ministry Office Complex</h3>
                    <div className="mb-2 text-[#ED1C24] font-semibold text-sm">Phnom Penh • Government</div>
@@ -172,7 +180,14 @@ export default function Home2() {
                    <Link href="/done-projects" className={styles.viewProjectBtn}>View Project</Link>
                 </div>
              </div>
-             <div className={styles.projectCard} style={{backgroundImage: "url('/images/Thumbnail-5.jpg')"}}>
+             <div className={styles.projectCard}>
+                <Image 
+                  src="/images/Thumbnail-5.jpg" 
+                  alt="BVM Water Treatment" 
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
                 <div className={styles.projectOverlay}>
                    <h3>BVM Water Treatment</h3>
                    <div className="mb-2 text-[#ED1C24] font-semibold text-sm">Siem Reap • Infrastructure</div>
@@ -182,7 +197,14 @@ export default function Home2() {
                    <Link href="/done-projects" className={styles.viewProjectBtn}>View Project</Link>
                 </div>
              </div>
-             <div className={styles.projectCard} style={{backgroundImage: "url('/images/Thumbnail-3.jpg')"}}>
+             <div className={styles.projectCard}>
+                <Image 
+                  src="/images/Thumbnail-3.jpg" 
+                  alt="Private Villa Estate" 
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
                 <div className={styles.projectOverlay}>
                    <h3>Private Villa Estate</h3>
                    <div className="mb-2 text-[#ED1C24] font-semibold text-sm">Kandal • Residential</div>
@@ -205,7 +227,15 @@ export default function Home2() {
 
           <div className={styles.newsGrid}>
              <div className={styles.newsCard}>
-               <img src="/images/Thumbnail-4.jpg" alt="News" className="w-full h-48 object-cover" />
+               <div className="w-full h-48 relative">
+                 <Image 
+                   src="/images/Thumbnail-4.jpg" 
+                   alt="News" 
+                   fill
+                   className="object-cover"
+                   sizes="(max-width: 768px) 100vw, 33vw"
+                 />
+               </div>
                <div className={styles.newsDate}>Oct 15, 2025</div>
                <div className={styles.newsContent}>
                  <h3 className={styles.newsTitle}>Kim Mex Wins Best Commercial Project Award</h3>
@@ -213,7 +243,15 @@ export default function Home2() {
                </div>
              </div>
              <div className={styles.newsCard}>
-               <img src="/images/Thumbnail-2.jpg" alt="News" className="w-full h-48 object-cover" />
+               <div className="w-full h-48 relative">
+                 <Image 
+                   src="/images/Thumbnail-2.jpg" 
+                   alt="News" 
+                   fill
+                   className="object-cover"
+                   sizes="(max-width: 768px) 100vw, 33vw"
+                 />
+               </div>
                <div className={styles.newsDate}>Sep 02, 2025</div>
                <div className={styles.newsContent}>
                  <h3 className={styles.newsTitle}>Groundbreaking Ceremony for New Water Plant</h3>
@@ -221,7 +259,15 @@ export default function Home2() {
                </div>
              </div>
              <div className={styles.newsCard}>
-               <img src="/images/Thumbnail-7.jpg" alt="News" className="w-full h-48 object-cover" />
+               <div className="w-full h-48 relative">
+                 <Image 
+                   src="/images/Thumbnail-7.jpg" 
+                   alt="News" 
+                   fill
+                   className="object-cover"
+                   sizes="(max-width: 768px) 100vw, 33vw"
+                 />
+               </div>
                <div className={styles.newsDate}>Aug 10, 2025</div>
                <div className={styles.newsContent}>
                  <h3 className={styles.newsTitle}>Safety Milestone: 1 Million Man-Hours</h3>
@@ -239,26 +285,26 @@ export default function Home2() {
              <h2 className="section-title">Our Clients</h2>
           </div>
           <div className={styles.clientsGrid}>
-             <div className={styles.clientLogo}>
-               <img src="/assets/ACU.png" alt="ACU" title="Anti-Corruption Unit" />
+             <div className={styles.clientLogo} style={{position: 'relative'}}>
+               <Image src="/assets/ACU.png" alt="ACU" fill className="object-contain p-4" sizes="140px" />
              </div>
-             <div className={styles.clientLogo}>
-               <img src="/assets/EDC.png" alt="EDC" title="Electricite du Cambodge" />
+             <div className={styles.clientLogo} style={{position: 'relative'}}>
+               <Image src="/assets/EDC.png" alt="EDC" fill className="object-contain p-4" sizes="140px" />
              </div>
-             <div className={styles.clientLogo}>
-               <img src="/assets/GCDE.png" alt="GCDE" title="General Department of Customs and Excise" />
+             <div className={styles.clientLogo} style={{position: 'relative'}}>
+               <Image src="/assets/GCDE.png" alt="GCDE" fill className="object-contain p-4" sizes="140px" />
              </div>
-             <div className={styles.clientLogo}>
-               <img src="/assets/MEF.png" alt="MEF" title="Ministry of Economy and Finance" />
+             <div className={styles.clientLogo} style={{position: 'relative'}}>
+               <Image src="/assets/MEF.png" alt="MEF" fill className="object-contain p-4" sizes="140px" />
              </div>
-             <div className={styles.clientLogo}>
-               <img src="/assets/MOI.png" alt="MOI" title="Ministry of Interior" />
+             <div className={styles.clientLogo} style={{position: 'relative'}}>
+               <Image src="/assets/MOI.png" alt="MOI" fill className="object-contain p-4" sizes="140px" />
              </div>
-             <div className={styles.clientLogo}>
-               <img src="/assets/NCE.jpg" alt="NCE" title="National Committee for Disaster Management" />
+             <div className={styles.clientLogo} style={{position: 'relative'}}>
+               <Image src="/assets/NCE.jpg" alt="NCE" fill className="object-contain p-4" sizes="140px" />
              </div>
-             <div className={styles.clientLogo}>
-               <img src="/assets/NSSF.png" alt="NSSF" title="National Social Security Fund" />
+             <div className={styles.clientLogo} style={{position: 'relative'}}>
+               <Image src="/assets/NSSF.png" alt="NSSF" fill className="object-contain p-4" sizes="140px" />
              </div>
           </div>
         </div>
